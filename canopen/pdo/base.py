@@ -418,7 +418,7 @@ class PdoMap:
                 logger.info(f"Setting {log_fmt}", value * log_factor)
                 self.com_record[subindex].raw = value
             else:
-                logger.info(f"Cannot set {log_fmt}, not writable", value * log_factor)
+                logger.warning(f"Cannot set {log_fmt}, not writable", value * log_factor)
 
         _set_com_record(2, self.trans_type, "transmission type to %d")
         _set_com_record(3, self.inhibit_time, "inhibit time to %d us", 100)
